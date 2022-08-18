@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\RedirectResponse;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +13,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function ()
+{
+    return redirect('/propertiesList/1');
+});
+Route::get('/propertiesList/{idPage}', 'Controller@propiertiesList');
 
-Route::get('/', "Controller@propiertiesList");
-
-Route::get('/propierty/{idProp}','Controller@propiertyPage');
+Route::get('/property/{idProp}','Controller@propertyPage');
