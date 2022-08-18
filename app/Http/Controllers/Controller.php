@@ -10,4 +10,14 @@ use Illuminate\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    public function propiertiesList()
+    {
+        return view("propiertiesList");
+    }
+
+    public function propiertyPage($idProp)
+    {
+        
+    }
 }
