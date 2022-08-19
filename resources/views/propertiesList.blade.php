@@ -14,10 +14,9 @@
                 <img src="{{$property['title_image_thumb']}}" alt="Image not available">
             </div>
             <div class="col-5">
-                <span class="row">ID: {{$property['public_id']}}</span>
-                <span class="row">Title: {{$property['title']}}</span>
-                <span class="row">Type: {{$property['property_type']}}</span>
-                <span class="row">Location: {{$property['location']}}</span>
+                <h6 class="row">{{$property['title']}} ({{$property['public_id']}})</h6>
+                <p class="row">Type: {{$property['property_type']}}</p>
+                <p class="row">Location: {{$property['location']}}</p>
             </div>
         </div>
     </a>
