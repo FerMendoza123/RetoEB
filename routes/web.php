@@ -13,12 +13,11 @@ use Illuminate\Http\RedirectResponse;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function ()
-{
+Route::get('/', function (){
     return redirect('/propertiesList/1');
 });
-Route::get('/propertiesList/{idPage}', 'Controller@propiertiesList');
 
-Route::get('/property/{idProp}','Controller@propertyPage');
+Route::get('/propertiesList/{idPage}', 'ListController@loadPage');
 
-Route::post('/contactTest','Controller@postContact');
+Route::get('/property/{idProperty}','PropertyController@showProperty');
+Route::post('/property/sendContactReq','PropertyController@postContactReq');

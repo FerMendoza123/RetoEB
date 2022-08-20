@@ -14,7 +14,7 @@
 
 
 <body>
-    <div class="container bg-info my-5 ">
+    <div class="container my-5">
         @yield('content')
     </div>
 </body>

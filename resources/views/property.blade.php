@@ -5,27 +5,28 @@
     <h5>{{$property['title']}}({{$property['public_id']}})</h5>
     <p>{{$property['description']}}</p>
 
-    <!--Imagenes-->
+
 
     
     <section>
-        {{ App\Http\Controllers\Controller::printValidData($property['location']['name'], 'p', 'Location'); }}
-        {{ App\Http\Controllers\Controller::printValidData($property['location']['street'], 'p', 'Street'); }}
-        {{ App\Http\Controllers\Controller::printValidData($property['location']['latitude'], 'p', 'Latitude'); }}
+        {{ App\Http\Controllers\PropertyController::printValidData($property['location']['name'], 'p', 'Location'); }}
+        {{ App\Http\Controllers\PropertyController::printValidData($property['location']['street'], 'p', 'Street'); }}
+        {{ App\Http\Controllers\PropertyController::printValidData($property['location']['latitude'], 'p', 'Latitude'); }}
 
-        {{ App\Http\Controllers\Controller::printValidData($property['location']['longitude'], 'p', 'Longitude'); }}
-        {{ App\Http\Controllers\Controller::printValidData($property['location']['postal_code'], 'p', 'Postal code'); }}
+        {{ App\Http\Controllers\PropertyController::printValidData($property['location']['longitude'], 'p', 'Longitude'); }}
+        {{ App\Http\Controllers\PropertyController::printValidData($property['location']['postal_code'], 'p', 'Postal code'); }}
  
         @if($property['location']['show_exact_location'])
-            {{ App\Http\Controllers\Controller::printValidData($property['location']['exterior_number'], 'p', 'Exterior number'); }}
-            {{ App\Http\Controllers\Controller::printValidData($property['location']['interior_number'], 'p', 'Interior number'); }}
+            {{ App\Http\Controllers\PropertyController::printValidData($property['location']['exterior_number'], 'p', 'Exterior number'); }}
+            {{ App\Http\Controllers\PropertyController::printValidData($property['location']['interior_number'], 'p', 'Interior number'); }}
         @endif
     </section>
     
 
     <!--Form-->
-
-    <form action = "/contactTest" method = "POST">
+    <hr>
+    <h5>Contact Request</h5>
+    <form action = "/property/sendContactReq" method = "POST">
         <input type="text" name="property_id" value="{{$property['public_id']}}" hidden>
         
         <div class="mb-3">

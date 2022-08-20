@@ -3,17 +3,18 @@
 @section('content')
 
 <div class="h1">
-    adsad
+    Properties page {{$JSON['pagination']['page']}}
 </div>
 
 <!--This for loop adds all the properties of the current page to the DOM-->
 @foreach($JSON['content'] as $property)
+    <hr>
     <a href="/property/{{$property['public_id']}}" class="text-decoration-none text-dark">
-        <div class="row">
-            <div class="col-2">
+        <div class="row justify-content-around">
+            <div class="col">
                 <img src="{{$property['title_image_thumb']}}" alt="Image not available">
             </div>
-            <div class="col-5">
+            <div class="col">
                 <h6 class="row">{{$property['title']}} ({{$property['public_id']}})</h6>
                 <p class="row">Type: {{$property['property_type']}}</p>
                 <p class="row">Location: {{$property['location']}}</p>
