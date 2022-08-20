@@ -19,5 +19,5 @@ Route::get('/', function (){
 
 Route::get('/propertiesList/{idPage}', 'ListController@loadPage');
 
-Route::get('/property/{idProperty}','PropertyController@showProperty');
+Route::get('/property/{idProperty}','PropertyController@loadProperty');
 Route::post('/property/sendContactReq','PropertyController@postContactReq');

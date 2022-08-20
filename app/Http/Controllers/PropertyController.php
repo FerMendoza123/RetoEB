@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class PropertyController extends Controller
 {
     #This function loads the property view
-    public function showProperty($idProperty)
+    public function loadProperty($idProperty)
     {
         $JSON = $this->getJSON('https://api.stagingeb.com/v1/properties/'.$idProperty);
         return view('property')->with('property',$JSON);
