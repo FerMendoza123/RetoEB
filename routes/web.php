@@ -20,3 +20,5 @@ Route::get('/', function ()
 Route::get('/propertiesList/{idPage}', 'Controller@propiertiesList');
 
 Route::get('/property/{idProp}','Controller@propertyPage');
+
+Route::post('/contactTest','Controller@postContact');
